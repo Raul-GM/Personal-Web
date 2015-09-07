@@ -1,0 +1,26 @@
+@function drawShadow($shadowColor, $neg, $to){
+	$val: 0px 0px $shadowColor;
+	@for $i from 1 through $to{
+		$val: #{$val}, #{$neg}#{$i}px #{$i}px #{$shadowColor};
+	}
+	@return $val;
+}
+@mixin long_shadow($textColor, $shadowColor, $size, $to, $darken){
+	font-size: $size;
+	color: $textColor;
+	position: relative;
+	text-shadow: drawShadow(darken($shadowColor, $darken), '', $to);
+}
+
+@mixin long_shadow_inverse($textColor, $shadowColor, $size, $to, $darken){
+	font-size: $size;
+	color: $textColor;
+	text-shadow: drawShadow(darken($shadowColor, $darken), '-', $to);
+}
+
+.reverseText{
+	display: inline-block;
+	unicode-bidi:bidi-override;
+	direction:rtl;
+	@include rotate(180deg);
+}

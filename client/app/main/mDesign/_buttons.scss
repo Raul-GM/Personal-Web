@@ -1,0 +1,17 @@
+.ink{
+    position: absolute;
+    display: block;
+    background: $pColorDark;
+    transform: scale(0);
+    @include border-radius(100%);
+    &.animate{
+        animation: ripple 0.45s linear;
+    }
+}
+
+@keyframes ripple {
+    /*scale the element to 250% to safely cover the entire link and fade it out*/
+    95% {opacity: 0; transform: scale(2.5);}
+    96% {opacity: 0; transform: scale(0);}
+    100%{opacity: 1; transform: scale(0);}
+}

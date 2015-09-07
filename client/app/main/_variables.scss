@@ -1,0 +1,19 @@
+// COLORS
+$pColorDark:        $rd700;
+$pColor:            $rd500;
+$pColorAlpha1:		rgba(244, 67, 54, 0.5);
+$pColorAlpha2:		rgba(211, 47, 47, 0.5);
+$pColorLight:       $rd100;
+$pColorText:        $white;
+$acolor:            $bg500;
+$pTextColor:        $gy900;
+$sTextColor:        $gy600;
+$dColor:            $gy400;
+
+//SIZES
+$szHeader:			200px;
+$szNav:				50px;
+
+//FONTS
+$fntMain:			'Roboto', sans-serif;
+@font-face { font-family: fntTitle; src: url('main/fonts/BubblegumSans-Regular.otf'); }

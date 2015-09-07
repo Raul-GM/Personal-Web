@@ -1,0 +1,24 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin rotate($degrees){
+	-webkit-transform: 	rotateY($degrees);
+		-moz-transform: rotateY($degrees);
+		-o-transform: 	rotateY($degrees);
+		-ms-transform: 	rotateY($degrees);
+}
+
+@mixin calc($prop, $calc){
+	#{$prop}: 		-webkit-calc(#{$calc});
+	#{$prop}: 		-moz-calc(#{$calc});
+	#{$prop}: 		calc(#{$calc});
+}
+
+@mixin transition($transition){
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+          transition: $transition;
+}

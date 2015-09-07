@@ -1,0 +1,78 @@
+html,
+body,
+body > .ng-scope:first-child{
+	width: 100%;
+	height:100%;
+	font-family: $fntMain;
+}
+section{
+    background: $acolor;
+    @include calc(height, 100% - #{$szHeader});
+}
+header{
+	background: $pColor;
+	height: $szHeader;
+	overflow: hidden;
+	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
+	div{
+		@include flexbox;
+		@include flex-direction(column);
+		@include justify-content(center);
+		@include flex(0 0 150px);
+		font-family: fntTitle;
+		h1{
+			text-align: center;
+		    .longShadow{ @include long_shadow($pColorText, $pColorDark, 40px, 200, 0%); }
+		    .longShadowInverse{ @include long_shadow_inverse($pColorText, $pColorDark, 40px, 200, 0%); }
+		}
+		h2{
+			text-align: center;
+		    .longShadow{ @include long_shadow($pColorText, $pColorDark, 24px, 200, 5%); }
+		    .longShadowInverse{ @include long_shadow_inverse($pColorText, $pColorDark, 24px, 200, 5%); }
+		}
+	}
+
+	nav{
+		@include flex(0 1 $szNav);
+		@include align-self(flex-end);
+		width: 100%;
+		z-index: 100;
+		ul{
+			height: $szNav;
+			color: $pColorLight;
+			background: $pColorDark;
+			@include flexbox;
+			@include flex-direction(row);
+			@include justify-content(center);
+			@include align-items(center);
+			li{
+				@include flex(0 1 auto);
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;
+				line-height: $szNav;
+				padding: 0 14px;
+				&:hover{
+			        @include transition(0.45s linear);
+			        background: $pColorAlpha1;
+			    }
+			    .optUnderline{
+			    	left: -5px;
+			    	height: 4px;
+			    	background: $pColorLight;
+			    	width: 0%;
+			    	position: relative;
+			    	top: -4px;
+			    	@include transition(0.25s linear);
+			    }
+			    &.active{
+			    	.optUnderline{ @include calc(width, '100% + 10px'); }
+			    }
+			}
+		}
+	}
+}
