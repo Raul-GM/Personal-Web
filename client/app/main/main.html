@@ -5,7 +5,7 @@
   </div>
   <nav ng-controller="navController as nav">
     <ul>
-      <li ng-repeat="option in nav.options track by $index" ng-mouseup="nav.launchAnimation($event)" ng-click="nav.prepareAnimation($index, $event)">
+      <li ng-repeat="option in nav.options track by $index" ng-mouseup="nav.launchAnimation($event)" ng-click="nav.prepareAnimation($event, $index)">
         <div ng-class="class_name" class="ink" style="top:{{top}}px; left:{{left}}px; width:{{width}}px; height:{{height}}px"></div>
         {{option.name}}
         <p class="optUnderline"></p>
@@ -14,7 +14,58 @@
   </nav>
 </header><!-- /header -->
 <section class="main">
-  
+  <article id="container0" class="card big hide">
+    <div class="title">
+      <h1>¿Quién soy?</h1>
+    </div>
+    <div class="body">
+      <p><strong>Hello world!</strong> Soy un programador especializado en el desarrollo y maquetación web con más de 10 años como profesional (aunque llevo desde los 14 años cacharreando con mis proyectos personales). A parte del mundo web, tengo experiencia como desarrollador de aplicaciones Android.</p>
+      <p>Inquieto, proactivo, amante de la música, repostero en mis tiempos libres, UX ninja y padre un tanto freak.</p>
+    </div>
+  </article>
+  <article id="container1" class="card big hide">
+    <div class="title">
+      <h1>Portfolio</h1>
+    </div>
+    <div class="body">
+      <article class="card small clickable">
+        <div class="title">
+          <h1>Demo: Web de un fotógrafo</h1>
+        </div>
+        <div class="body">
+          <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
+        </div>
+        <div class="etc">
+          <p><span>...</span></p>
+        </div>
+      </article>
+      <article class="card small clickable">
+        <div class="title">
+          <h1>Demo: Web de un fotógrafo</h1>
+        </div>
+        <div class="body">
+          <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
+        </div>
+      </article>
+      <article class="card small clickable">
+        <div class="title">
+          <h1>Demo: Web de un fotógrafo</h1>
+        </div>
+        <div class="body">
+          <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
+        </div>
+      </article>
+      <article class="card small clickable">
+        <div class="title">
+          <h1>Demo: Web de un fotógrafo</h1>
+        </div>
+        <div class="body">
+          <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
+        </div>
+      </article>
+      
+    </div>
+  </article>
 </section>
 <footer>
   

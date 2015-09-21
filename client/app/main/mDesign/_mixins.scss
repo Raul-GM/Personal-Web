@@ -22,3 +22,8 @@
      -moz-transition: $transition;
           transition: $transition;
 }
+
+@mixin box-2-shadow($shadow1, $shadow2){
+	-webkit-box-shadow: $shadow1, $shadow2 ;
+  			box-shadow: $shadow1, $shadow2;
+}

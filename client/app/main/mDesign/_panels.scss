@@ -1,0 +1,44 @@
+.card{
+	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(flex-start);
+	@include align-items(center);
+
+   	position: relative;
+	min-width: 250px;
+	min-height: 180px;
+	background: $pColorText;
+	color: $pTextColor;
+	overflow: hidden;
+	@include border-radius(2px);
+  	@include box-2-shadow(0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23));
+  	@include transition(all 0.75s ease-in-out);
+  	.title{
+  		width: 100%;
+  		text-align: center;
+  		font-size: 20px;
+  	}
+  	.body{
+  		margin: 0 $mrgHor;
+  		font-size: 16px;
+  		line-height: 120%;
+  		p{ margin: $mrgHor 0;}
+  	}
+  	.etc{
+  		position: relative;
+  		width: 100%;
+  		z-index: 500;
+  		border-top: 1px $sTextColor solid;
+  		cursor: default;
+  		@include transition(0.25s linear);
+  		p>span{
+  			cursor: pointer;
+  		}
+  	}
+  	&.clickable{
+  		cursor: pointer;
+  		@include transition(all 0.25s ease-in-out);
+  		@include box-2-shadow(0 0 1px rgba(0, 0, 0, 0.16), 0px 1px 2px rgba(0, 0, 0, 0.23));
+  		&:hover{ @include box-2-shadow(0 0 10px rgba(0, 0, 0, 0.16), 0px 3px 10px rgba(0, 0, 0, 0.23)); }
+  	}
+}

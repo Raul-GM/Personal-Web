@@ -19,13 +19,15 @@
   app.controller('navController', function($scope, $timeout){
     this.options = options;
 
-    this.prepareAnimation = function($index, $event){
-      console.log('---->' + $index);
+    this.prepareAnimation = function($event, $index){
       var self = $($('nav li')[$index]).find('div');
       $('nav li').removeClass('active');
       $($('nav li')[$index]).addClass('active');
       self.addClass('animate');
-      self.attr("style","width: 140px; height: 140px; left: " + (event.offsetX - 70) + "px; top: " + (event.offsetY - 70) + "px");
+      self.attr("style","width: 140px; height: 140px; left: " + ($event.offsetX - 70) + "px; top: " + ($event.offsetY - 70) + "px");
+
+      $('article').addClass('hide');
+      $('#container'+$index).removeClass('hide');
 
       var reset = function(){
         self.attr("style","width: 0; height: 0");
@@ -37,8 +39,8 @@
 
     $scope.launchAnimation = function($event){
       console.log("--->");
-      this.left = event.offsetX - 50;
-      this.top = event.offsetY - 50;
+      this.left = $event.offsetX - 50;
+      this.top = $event.offsetY - 50;
       this.width = '140';
       this.height = '140';
       this.class_name = 'animate';

@@ -3,20 +3,29 @@ body,
 body > .ng-scope:first-child{
 	width: 100%;
 	height:100%;
+	overflow: hidden;
 	font-family: $fntMain;
 }
 section{
-    background: $acolor;
+	background-image: url("../assets/images/background.jpg");
+	background-size: 100%;
+    background-color: $acolor;
     @include calc(height, 100% - #{$szHeader});
+    overflow: auto;
+    position: relative;
 }
 header{
-	background: $pColor;
+
+	background-color: $pColor;
 	height: $szHeader;
+	position: relative;
 	overflow: hidden;
 	@include flexbox;
 	@include flex-direction(column);
 	@include justify-content(center);
 	@include align-items(center);
+	@include box-2-shadow(0px 4px 6px rgba(0, 0, 0, 0.16), 0px 5px 6px rgba(0, 0, 0, 0.23));
+	z-index: 100;
 	div{
 		@include flexbox;
 		@include flex-direction(column);
@@ -25,13 +34,13 @@ header{
 		font-family: fntTitle;
 		h1{
 			text-align: center;
-		    .longShadow{ @include long_shadow($pColorText, $pColorDark, 40px, 200, 0%); }
-		    .longShadowInverse{ @include long_shadow_inverse($pColorText, $pColorDark, 40px, 200, 0%); }
+		    .longShadow{ @include long_shadow($pColorText, $pColorDark, 40px, 110, 0%); }
+		    .longShadowInverse{ @include long_shadow_inverse($pColorText, $pColorDark, 40px, 110, 0%); }
 		}
 		h2{
 			text-align: center;
-		    .longShadow{ @include long_shadow($pColorText, $pColorDark, 24px, 200, 5%); }
-		    .longShadowInverse{ @include long_shadow_inverse($pColorText, $pColorDark, 24px, 200, 5%); }
+		    .longShadow{ @include long_shadow($pColorText, $pColorDark, 24px, 60, 5%); }
+		    .longShadowInverse{ @include long_shadow_inverse($pColorText, $pColorDark, 24px, 60, 5%); }
 		}
 	}
 
@@ -73,6 +82,53 @@ header{
 			    	.optUnderline{ @include calc(width, '100% + 10px'); }
 			    }
 			}
+		}
+	}
+}
+
+.card{
+
+	&.big{
+		@include calc(width, "100% - #{$mrgCardHor*2}");
+		margin: 0 0 $mrgCardVer $mrgCardHor;
+		top: $mrgCardVer;
+		max-height: 100%;
+		visibility: visible;
+		position: absolute;
+		z-index: 0;
+		opacity: 1;
+		background: $pColorText;
+		&.hide{
+			top: -300px;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.title{
+			background: $pColor;
+			color: $pColorText;
+			h1{ margin: $mrgVer $mrgHor; }
+		}
+		.body{
+			@include flexbox;
+			@include flex-direction(row);
+			@include justify-content(center);
+			@include flex-wrap(wrap);
+		}
+		.small{ margin: $mrgVer; }
+	}
+	&.small{
+		@include calc(width, "100px - #{$mrgCardHor*2}");
+		height: $crdSmallHeight;
+		.title{
+			font-size: 16px;
+			background: $pColorDark;
+			color: $pColorText;
+			h1{ margin: $mrgVer/2 $mrgHor/2; }
+		}
+		.body{ font-size: 14px; }
+		.etc{
+			height: $crdSmallHeight;
+			background: $pColorText;
 		}
 	}
 }
