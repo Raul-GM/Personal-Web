@@ -87,12 +87,10 @@ header{
 }
 
 .card{
-
 	&.big{
 		@include calc(width, "100% - #{$mrgCardHor*2}");
 		margin: 0 0 $mrgCardVer $mrgCardHor;
 		top: $mrgCardVer;
-		max-height: 100%;
 		visibility: visible;
 		position: absolute;
 		z-index: 0;
@@ -126,9 +124,15 @@ header{
 			h1{ margin: $mrgVer/2 $mrgHor/2; }
 		}
 		.body{ font-size: 14px; }
+		img{ 
+			width: 100%;
+			height: 100%;
+		}
 		.etc{
-			height: $crdSmallHeight;
+			top: 0px;
+			min-height: $crdSmallHeight;
 			background: $pColorText;
+			&.up{ top: -209px; }
 		}
 	}
 }

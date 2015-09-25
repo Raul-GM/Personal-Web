@@ -23,20 +23,37 @@
       <p>Inquieto, proactivo, amante de la música, repostero en mis tiempos libres, UX ninja y padre un tanto freak.</p>
     </div>
   </article>
-  <article id="container1" class="card big hide">
+  <article id="container1" class="card big hide" ng-controller="pfController as pf">
     <div class="title">
       <h1>Portfolio</h1>
     </div>
     <div class="body">
-      <article class="card small clickable">
-        <div class="title">
-          <h1>Demo: Web de un fotógrafo</h1>
+      <article class="card small clickable" ng-repeat="project in pf.portfolio track by $index" >
+        <div class="title" ng-click="pf.goToWeb($index)">
+          <h1>{{project.title}}</h1>
         </div>
-        <div class="body">
-          <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
+        <div class="body" ng-click="pf.goToWeb($index)">
+          <img src="{{project.image}}">
         </div>
         <div class="etc">
-          <p><span>...</span></p>
+          <p><span id="cardEtc" ng-click="pf.openEtc($index)">...</span></p>
+          <div class="body">
+            <p>{{project.text}}</p>
+          </div>
+        </div>
+      </article>
+     <!--  <article class="card small clickable">
+        <div class="title">
+          <h1>Demo: Web de un fotógrafo</h1>
+        </div>
+        <div class="body">
+          <img src="../../assets/images/webPhotographyExample.png">
+        </div>
+        <div class="etc">
+          <p><span id="cardEtc">...</span></p>
+          <div class="body">
+            <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
+          </div>
         </div>
       </article>
       <article class="card small clickable">
@@ -62,7 +79,7 @@
         <div class="body">
           <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
         </div>
-      </article>
+      </article> -->
       
     </div>
   </article>
