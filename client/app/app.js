@@ -38,7 +38,6 @@
     };
 
     $scope.launchAnimation = function($event){
-      console.log("--->");
       this.left = $event.offsetX - 50;
       this.top = $event.offsetY - 50;
       this.width = '140';
