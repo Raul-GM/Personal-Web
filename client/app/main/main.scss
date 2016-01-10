@@ -6,6 +6,9 @@ body > .ng-scope:first-child{
 	overflow: hidden;
 	font-family: $fntMain;
 }
+
+a{ text-decoration: none; }
+
 section{
 	background-image: url("../assets/images/background.jpg");
 	background-size: 100%;

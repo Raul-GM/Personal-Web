@@ -1,8 +1,8 @@
 <header id="header">
-  <div>
+  <!-- <div>
     <h1 ><span class="reverseText longShadowInverse">R</span><span class="longShadow">aúlGM</span></h1>
     <h2 ><span class="longShadow">Front-End developer</span></h2>
-  </div>
+  </div> -->
   <nav ng-controller="navController as nav">
     <ul>
       <li ng-repeat="option in nav.options track by $index" ng-mouseup="nav.launchAnimation($event)" ng-click="nav.prepareAnimation($event, $index)">
@@ -42,45 +42,26 @@
           </div>
         </div>
       </article>
-     <!--  <article class="card small clickable">
-        <div class="title">
-          <h1>Demo: Web de un fotógrafo</h1>
-        </div>
-        <div class="body">
-          <img src="../../assets/images/webPhotographyExample.png">
-        </div>
-        <div class="etc">
-          <p><span id="cardEtc">...</span></p>
-          <div class="body">
-            <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
-          </div>
-        </div>
-      </article>
-      <article class="card small clickable">
-        <div class="title">
-          <h1>Demo: Web de un fotógrafo</h1>
-        </div>
-        <div class="body">
-          <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
-        </div>
-      </article>
-      <article class="card small clickable">
-        <div class="title">
-          <h1>Demo: Web de un fotógrafo</h1>
-        </div>
-        <div class="body">
-          <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
-        </div>
-      </article>
-      <article class="card small clickable">
-        <div class="title">
-          <h1>Demo: Web de un fotógrafo</h1>
-        </div>
-        <div class="body">
-          <p>Se trata de una demo de una web orientada a un posible fotógrafo. Este proyecto lo inicié por cuenta propia para poder ir añadiendo webs a mi portfolio. Al ser una demo no tiene todas sus opciones habilitadas, simplemente es una pequeña muestra de lo que puedo llegar a hacer.</p>
-        </div>
-      </article> -->
-      
+    </div>
+  </article>
+  <article id="container2" class="card big hide">
+    <div class="form" >
+      <p>Escríbeme!</p>
+      <div ng-init="focus=false" class="text1" ng-class="{focus: txtNameFocus, active: addClassName.length}" for="txtName">
+        <input ng-focus="txtNameFocus=true;" ng-model="addClassName" ng-blur="txtNameFocus=false" type="text" id="txtName" name="txtName">
+        <label>Nombre *</label>
+      </div>
+      <div ng-init="focus=false" class="text1" ng-class="{focus: txtEmailFocus, active: addClassEmail.length}" for="txtEmail">
+        <input ng-focus="txtEmailFocus=true;" ng-model="addClassEmail" ng-blur="txtEmailFocus=false" type="text" id="txtEmail" name="txtEmail">
+        <label>Correo *</label>
+      </div>
+      <div ng-init="focus=false" class="textarea1" ng-class="{focus: txtTextFocus, active: addClassText.length}" for="txtText">
+        <textarea ng-focus="txtTextFocus=true;" ng-model="addClassText" ng-blur="txtTextFocus=false" type="text" id="txtText" name="txtText"/>
+        <label>Texto *</label>
+      </div>
+      <div ng-controller="btnController">
+        <a class="flatButton" ng-mouseup="btnController.launchAnimation($event)" ng-click="btnController.prepareAnimation($event, $index)" href="">Enviar</a>
+      </div>
     </div>
   </article>
 </section>
