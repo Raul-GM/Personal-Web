@@ -74,46 +74,30 @@
   margin-left: .3em; }
 
 .fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear; }
-
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg); } }
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  -webkit-transform: rotate(180deg);
   transform: rotate(180deg); }
 
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  -webkit-transform: rotate(270deg);
   transform: rotate(270deg); }
 
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
-  -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1); }
 
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  -webkit-transform: scale(1, -1);
   transform: scale(1, -1); }
 
 :root .fa-rotate-90,
@@ -1663,53 +1647,29 @@
   position: absolute;
   display: block;
   background: #D32F2F;
-  -webkit-transform: scale(0);
   transform: scale(0);
   border-radius: 100%; }
   .ink.animate {
-    -webkit-animation: ripple 0.45s linear;
     animation: ripple 0.45s linear; }
-
-@-webkit-keyframes ripple {
-  /*scale the element to 250% to safely cover the entire link and fade it out*/
-  95% {
-    opacity: 0;
-    -webkit-transform: scale(2.5);
-    transform: scale(2.5); }
-  96% {
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(0);
-    transform: scale(0); } }
 
 @keyframes ripple {
   /*scale the element to 250% to safely cover the entire link and fade it out*/
   95% {
     opacity: 0;
-    -webkit-transform: scale(2.5);
     transform: scale(2.5); }
   96% {
     opacity: 0;
-    -webkit-transform: scale(0);
     transform: scale(0); }
   100% {
     opacity: 1;
-    -webkit-transform: scale(0);
     transform: scale(0); } }
 .card {
-  display: -webkit-flex;
   display: -moz-flex;
   display: flex;
-  -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
-  -webkit-justify-content: flex-start;
   -moz-justify-content: flex-start;
   justify-content: flex-start;
-  -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
   position: relative;
@@ -1726,7 +1686,7 @@
     text-align: center;
     font-size: 20px; }
   .card .body {
-    margin: 0 12px;
+    margin: 24px 12px;
     font-size: 16px;
     line-height: 120%; }
     .card .body p {
@@ -1739,7 +1699,10 @@
     cursor: default;
     transition: 0.25s linear; }
     .card .etc p > span {
-      cursor: pointer; }
+      cursor: pointer;
+      font-size: 16px; }
+    .card .etc .body {
+      margin-top: 0px; }
   .card.clickable {
     cursor: pointer;
     transition: all 0.25s ease-in-out;
@@ -1819,38 +1782,29 @@ table {
   position: absolute;
   display: block;
   background: #D32F2F;
-  -webkit-transform: scale(0);
   transform: scale(0);
   border-radius: 100%; }
   .ink.animate {
-    -webkit-animation: ripple 0.45s linear;
     animation: ripple 0.45s linear; }
 
 @keyframes ripple {
   /*scale the element to 250% to safely cover the entire link and fade it out*/
   95% {
     opacity: 0;
-    -webkit-transform: scale(2.5);
     transform: scale(2.5); }
   96% {
     opacity: 0;
-    -webkit-transform: scale(0);
     transform: scale(0); }
   100% {
     opacity: 1;
-    -webkit-transform: scale(0);
     transform: scale(0); } }
 .card {
-  display: -webkit-flex;
   display: -moz-flex;
   display: flex;
-  -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
-  -webkit-justify-content: flex-start;
   -moz-justify-content: flex-start;
   justify-content: flex-start;
-  -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
   position: relative;
@@ -1867,7 +1821,7 @@ table {
     text-align: center;
     font-size: 20px; }
   .card .body {
-    margin: 0 12px;
+    margin: 24px 12px;
     font-size: 16px;
     line-height: 120%; }
     .card .body p {
@@ -1880,7 +1834,10 @@ table {
     cursor: default;
     transition: 0.25s linear; }
     .card .etc p > span {
-      cursor: pointer; }
+      cursor: pointer;
+      font-size: 16px; }
+    .card .etc .body {
+      margin-top: 0px; }
   .card.clickable {
     cursor: pointer;
     transition: all 0.25s ease-in-out;
@@ -1961,31 +1918,23 @@ header {
   height: 200px;
   position: relative;
   overflow: hidden;
-  display: -webkit-flex;
   display: -moz-flex;
   display: flex;
-  -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
-  -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16), 0px 5px 6px rgba(0, 0, 0, 0.23);
   z-index: 100; }
   header div {
-    display: -webkit-flex;
     display: -moz-flex;
     display: flex;
-    -webkit-flex-direction: column;
     -moz-flex-direction: column;
     flex-direction: column;
-    -webkit-justify-content: center;
     -moz-justify-content: center;
     justify-content: center;
-    -webkit-flex: 0 0 150px;
     -moz-flex: 0 0 150px;
     flex: 0 0 150px;
     font-family: fntTitle; }
@@ -1995,11 +1944,11 @@ header {
         font-size: 40px;
         color: #FFFFFF;
         position: relative;
-        text-shadow: 0px 0px #d32f2f, 1px 1px #d32f2f, 2px 2px #d32f2f, 3px 3px #d32f2f, 4px 4px #d32f2f, 5px 5px #d32f2f, 6px 6px #d32f2f, 7px 7px #d32f2f, 8px 8px #d32f2f, 9px 9px #d32f2f, 10px 10px #d32f2f, 11px 11px #d32f2f, 12px 12px #d32f2f, 13px 13px #d32f2f, 14px 14px #d32f2f, 15px 15px #d32f2f, 16px 16px #d32f2f, 17px 17px #d32f2f, 18px 18px #d32f2f, 19px 19px #d32f2f, 20px 20px #d32f2f, 21px 21px #d32f2f, 22px 22px #d32f2f, 23px 23px #d32f2f, 24px 24px #d32f2f, 25px 25px #d32f2f, 26px 26px #d32f2f, 27px 27px #d32f2f, 28px 28px #d32f2f, 29px 29px #d32f2f, 30px 30px #d32f2f, 31px 31px #d32f2f, 32px 32px #d32f2f, 33px 33px #d32f2f, 34px 34px #d32f2f, 35px 35px #d32f2f, 36px 36px #d32f2f, 37px 37px #d32f2f, 38px 38px #d32f2f, 39px 39px #d32f2f, 40px 40px #d32f2f, 41px 41px #d32f2f, 42px 42px #d32f2f, 43px 43px #d32f2f, 44px 44px #d32f2f, 45px 45px #d32f2f, 46px 46px #d32f2f, 47px 47px #d32f2f, 48px 48px #d32f2f, 49px 49px #d32f2f, 50px 50px #d32f2f, 51px 51px #d32f2f, 52px 52px #d32f2f, 53px 53px #d32f2f, 54px 54px #d32f2f, 55px 55px #d32f2f, 56px 56px #d32f2f, 57px 57px #d32f2f, 58px 58px #d32f2f, 59px 59px #d32f2f, 60px 60px #d32f2f, 61px 61px #d32f2f, 62px 62px #d32f2f, 63px 63px #d32f2f, 64px 64px #d32f2f, 65px 65px #d32f2f, 66px 66px #d32f2f, 67px 67px #d32f2f, 68px 68px #d32f2f, 69px 69px #d32f2f, 70px 70px #d32f2f, 71px 71px #d32f2f, 72px 72px #d32f2f, 73px 73px #d32f2f, 74px 74px #d32f2f, 75px 75px #d32f2f, 76px 76px #d32f2f, 77px 77px #d32f2f, 78px 78px #d32f2f, 79px 79px #d32f2f, 80px 80px #d32f2f, 81px 81px #d32f2f, 82px 82px #d32f2f, 83px 83px #d32f2f, 84px 84px #d32f2f, 85px 85px #d32f2f, 86px 86px #d32f2f, 87px 87px #d32f2f, 88px 88px #d32f2f, 89px 89px #d32f2f, 90px 90px #d32f2f, 91px 91px #d32f2f, 92px 92px #d32f2f, 93px 93px #d32f2f, 94px 94px #d32f2f, 95px 95px #d32f2f, 96px 96px #d32f2f, 97px 97px #d32f2f, 98px 98px #d32f2f, 99px 99px #d32f2f, 100px 100px #d32f2f, 101px 101px #d32f2f, 102px 102px #d32f2f, 103px 103px #d32f2f, 104px 104px #d32f2f, 105px 105px #d32f2f, 106px 106px #d32f2f, 107px 107px #d32f2f, 108px 108px #d32f2f, 109px 109px #d32f2f, 110px 110px #d32f2f; }
+        text-shadow: 0px 0px #d32f2f, 1px 1px #d32f2f, 2px 2px #d32f2f, 3px 3px #d32f2f, 4px 4px #d32f2f, 5px 5px #d32f2f, 6px 6px #d32f2f, 7px 7px #d32f2f, 8px 8px #d32f2f, 9px 9px #d32f2f, 10px 10px #d32f2f, 11px 11px #d32f2f, 12px 12px #d32f2f, 13px 13px #d32f2f, 14px 14px #d32f2f, 15px 15px #d32f2f, 16px 16px #d32f2f, 17px 17px #d32f2f, 18px 18px #d32f2f, 19px 19px #d32f2f, 20px 20px #d32f2f, 21px 21px #d32f2f, 22px 22px #d32f2f, 23px 23px #d32f2f, 24px 24px #d32f2f, 25px 25px #d32f2f, 26px 26px #d32f2f, 27px 27px #d32f2f, 28px 28px #d32f2f, 29px 29px #d32f2f, 30px 30px #d32f2f, 31px 31px #d32f2f, 32px 32px #d32f2f, 33px 33px #d32f2f, 34px 34px #d32f2f, 35px 35px #d32f2f, 36px 36px #d32f2f, 37px 37px #d32f2f, 38px 38px #d32f2f, 39px 39px #d32f2f, 40px 40px #d32f2f, 41px 41px #d32f2f, 42px 42px #d32f2f, 43px 43px #d32f2f, 44px 44px #d32f2f, 45px 45px #d32f2f, 46px 46px #d32f2f, 47px 47px #d32f2f, 48px 48px #d32f2f, 49px 49px #d32f2f, 50px 50px #d32f2f, 51px 51px #d32f2f, 52px 52px #d32f2f, 53px 53px #d32f2f, 54px 54px #d32f2f, 55px 55px #d32f2f, 56px 56px #d32f2f, 57px 57px #d32f2f, 58px 58px #d32f2f, 59px 59px #d32f2f, 60px 60px #d32f2f, 61px 61px #d32f2f, 62px 62px #d32f2f, 63px 63px #d32f2f, 64px 64px #d32f2f, 65px 65px #d32f2f, 66px 66px #d32f2f, 67px 67px #d32f2f, 68px 68px #d32f2f, 69px 69px #d32f2f, 70px 70px #d32f2f, 71px 71px #d32f2f, 72px 72px #d32f2f, 73px 73px #d32f2f, 74px 74px #d32f2f, 75px 75px #d32f2f, 76px 76px #d32f2f, 77px 77px #d32f2f, 78px 78px #d32f2f, 79px 79px #d32f2f, 80px 80px #d32f2f, 81px 81px #d32f2f, 82px 82px #d32f2f, 83px 83px #d32f2f, 84px 84px #d32f2f, 85px 85px #d32f2f, 86px 86px #d32f2f, 87px 87px #d32f2f, 88px 88px #d32f2f, 89px 89px #d32f2f, 90px 90px #d32f2f; }
       header div h1 .longShadowInverse {
         font-size: 40px;
         color: #FFFFFF;
-        text-shadow: 0px 0px #d32f2f, -1px 1px #d32f2f, -2px 2px #d32f2f, -3px 3px #d32f2f, -4px 4px #d32f2f, -5px 5px #d32f2f, -6px 6px #d32f2f, -7px 7px #d32f2f, -8px 8px #d32f2f, -9px 9px #d32f2f, -10px 10px #d32f2f, -11px 11px #d32f2f, -12px 12px #d32f2f, -13px 13px #d32f2f, -14px 14px #d32f2f, -15px 15px #d32f2f, -16px 16px #d32f2f, -17px 17px #d32f2f, -18px 18px #d32f2f, -19px 19px #d32f2f, -20px 20px #d32f2f, -21px 21px #d32f2f, -22px 22px #d32f2f, -23px 23px #d32f2f, -24px 24px #d32f2f, -25px 25px #d32f2f, -26px 26px #d32f2f, -27px 27px #d32f2f, -28px 28px #d32f2f, -29px 29px #d32f2f, -30px 30px #d32f2f, -31px 31px #d32f2f, -32px 32px #d32f2f, -33px 33px #d32f2f, -34px 34px #d32f2f, -35px 35px #d32f2f, -36px 36px #d32f2f, -37px 37px #d32f2f, -38px 38px #d32f2f, -39px 39px #d32f2f, -40px 40px #d32f2f, -41px 41px #d32f2f, -42px 42px #d32f2f, -43px 43px #d32f2f, -44px 44px #d32f2f, -45px 45px #d32f2f, -46px 46px #d32f2f, -47px 47px #d32f2f, -48px 48px #d32f2f, -49px 49px #d32f2f, -50px 50px #d32f2f, -51px 51px #d32f2f, -52px 52px #d32f2f, -53px 53px #d32f2f, -54px 54px #d32f2f, -55px 55px #d32f2f, -56px 56px #d32f2f, -57px 57px #d32f2f, -58px 58px #d32f2f, -59px 59px #d32f2f, -60px 60px #d32f2f, -61px 61px #d32f2f, -62px 62px #d32f2f, -63px 63px #d32f2f, -64px 64px #d32f2f, -65px 65px #d32f2f, -66px 66px #d32f2f, -67px 67px #d32f2f, -68px 68px #d32f2f, -69px 69px #d32f2f, -70px 70px #d32f2f, -71px 71px #d32f2f, -72px 72px #d32f2f, -73px 73px #d32f2f, -74px 74px #d32f2f, -75px 75px #d32f2f, -76px 76px #d32f2f, -77px 77px #d32f2f, -78px 78px #d32f2f, -79px 79px #d32f2f, -80px 80px #d32f2f, -81px 81px #d32f2f, -82px 82px #d32f2f, -83px 83px #d32f2f, -84px 84px #d32f2f, -85px 85px #d32f2f, -86px 86px #d32f2f, -87px 87px #d32f2f, -88px 88px #d32f2f, -89px 89px #d32f2f, -90px 90px #d32f2f, -91px 91px #d32f2f, -92px 92px #d32f2f, -93px 93px #d32f2f, -94px 94px #d32f2f, -95px 95px #d32f2f, -96px 96px #d32f2f, -97px 97px #d32f2f, -98px 98px #d32f2f, -99px 99px #d32f2f, -100px 100px #d32f2f, -101px 101px #d32f2f, -102px 102px #d32f2f, -103px 103px #d32f2f, -104px 104px #d32f2f, -105px 105px #d32f2f, -106px 106px #d32f2f, -107px 107px #d32f2f, -108px 108px #d32f2f, -109px 109px #d32f2f, -110px 110px #d32f2f; }
+        text-shadow: 0px 0px #d32f2f, -1px 1px #d32f2f, -2px 2px #d32f2f, -3px 3px #d32f2f, -4px 4px #d32f2f, -5px 5px #d32f2f, -6px 6px #d32f2f, -7px 7px #d32f2f, -8px 8px #d32f2f, -9px 9px #d32f2f, -10px 10px #d32f2f, -11px 11px #d32f2f, -12px 12px #d32f2f, -13px 13px #d32f2f, -14px 14px #d32f2f, -15px 15px #d32f2f, -16px 16px #d32f2f, -17px 17px #d32f2f, -18px 18px #d32f2f, -19px 19px #d32f2f, -20px 20px #d32f2f, -21px 21px #d32f2f, -22px 22px #d32f2f, -23px 23px #d32f2f, -24px 24px #d32f2f, -25px 25px #d32f2f, -26px 26px #d32f2f, -27px 27px #d32f2f, -28px 28px #d32f2f, -29px 29px #d32f2f, -30px 30px #d32f2f, -31px 31px #d32f2f, -32px 32px #d32f2f, -33px 33px #d32f2f, -34px 34px #d32f2f, -35px 35px #d32f2f, -36px 36px #d32f2f, -37px 37px #d32f2f, -38px 38px #d32f2f, -39px 39px #d32f2f, -40px 40px #d32f2f, -41px 41px #d32f2f, -42px 42px #d32f2f, -43px 43px #d32f2f, -44px 44px #d32f2f, -45px 45px #d32f2f, -46px 46px #d32f2f, -47px 47px #d32f2f, -48px 48px #d32f2f, -49px 49px #d32f2f, -50px 50px #d32f2f, -51px 51px #d32f2f, -52px 52px #d32f2f, -53px 53px #d32f2f, -54px 54px #d32f2f, -55px 55px #d32f2f, -56px 56px #d32f2f, -57px 57px #d32f2f, -58px 58px #d32f2f, -59px 59px #d32f2f, -60px 60px #d32f2f, -61px 61px #d32f2f, -62px 62px #d32f2f, -63px 63px #d32f2f, -64px 64px #d32f2f, -65px 65px #d32f2f, -66px 66px #d32f2f, -67px 67px #d32f2f, -68px 68px #d32f2f, -69px 69px #d32f2f, -70px 70px #d32f2f, -71px 71px #d32f2f, -72px 72px #d32f2f, -73px 73px #d32f2f, -74px 74px #d32f2f, -75px 75px #d32f2f, -76px 76px #d32f2f, -77px 77px #d32f2f, -78px 78px #d32f2f, -79px 79px #d32f2f, -80px 80px #d32f2f, -81px 81px #d32f2f, -82px 82px #d32f2f, -83px 83px #d32f2f, -84px 84px #d32f2f, -85px 85px #d32f2f, -86px 86px #d32f2f, -87px 87px #d32f2f, -88px 88px #d32f2f, -89px 89px #d32f2f, -90px 90px #d32f2f; }
     header div h2 {
       text-align: center; }
       header div h2 .longShadow {
@@ -2012,10 +1961,8 @@ header {
         color: #FFFFFF;
         text-shadow: 0px 0px #c02929, -1px 1px #c02929, -2px 2px #c02929, -3px 3px #c02929, -4px 4px #c02929, -5px 5px #c02929, -6px 6px #c02929, -7px 7px #c02929, -8px 8px #c02929, -9px 9px #c02929, -10px 10px #c02929, -11px 11px #c02929, -12px 12px #c02929, -13px 13px #c02929, -14px 14px #c02929, -15px 15px #c02929, -16px 16px #c02929, -17px 17px #c02929, -18px 18px #c02929, -19px 19px #c02929, -20px 20px #c02929, -21px 21px #c02929, -22px 22px #c02929, -23px 23px #c02929, -24px 24px #c02929, -25px 25px #c02929, -26px 26px #c02929, -27px 27px #c02929, -28px 28px #c02929, -29px 29px #c02929, -30px 30px #c02929, -31px 31px #c02929, -32px 32px #c02929, -33px 33px #c02929, -34px 34px #c02929, -35px 35px #c02929, -36px 36px #c02929, -37px 37px #c02929, -38px 38px #c02929, -39px 39px #c02929, -40px 40px #c02929, -41px 41px #c02929, -42px 42px #c02929, -43px 43px #c02929, -44px 44px #c02929, -45px 45px #c02929, -46px 46px #c02929, -47px 47px #c02929, -48px 48px #c02929, -49px 49px #c02929, -50px 50px #c02929, -51px 51px #c02929, -52px 52px #c02929, -53px 53px #c02929, -54px 54px #c02929, -55px 55px #c02929, -56px 56px #c02929, -57px 57px #c02929, -58px 58px #c02929, -59px 59px #c02929, -60px 60px #c02929; }
   header nav {
-    -webkit-flex: 0 1 50px;
     -moz-flex: 0 1 50px;
     flex: 0 1 50px;
-    -webkit-align-self: flex-end;
     align-self: flex-end;
     width: 100%;
     z-index: 100; }
@@ -2023,20 +1970,15 @@ header {
       height: 50px;
       color: #FFCDD2;
       background: #D32F2F;
-      display: -webkit-flex;
       display: -moz-flex;
       display: flex;
-      -webkit-flex-direction: row;
       -moz-flex-direction: row;
       flex-direction: row;
-      -webkit-justify-content: center;
       -moz-justify-content: center;
       justify-content: center;
-      -webkit-align-items: center;
       -moz-align-items: center;
       align-items: center; }
       header nav ul li {
-        -webkit-flex: 0 1 auto;
         -moz-flex: 0 1 auto;
         flex: 0 1 auto;
         height: 100%;
@@ -2078,22 +2020,18 @@ header {
     .card.big .title h1 {
       margin: 20px 12px; }
   .card.big .body {
-    display: -webkit-flex;
     display: -moz-flex;
     display: flex;
-    -webkit-flex-direction: row;
     -moz-flex-direction: row;
     flex-direction: row;
-    -webkit-justify-content: center;
     -moz-justify-content: center;
     justify-content: center;
-    -webkit-flex-wrap: wrap;
     flex-wrap: wrap; }
   .card.big .small {
     margin: 20px; }
 .card.small {
   width: calc(100px - 100px);
-  height: 250px; }
+  height: 300px; }
   .card.small .title {
     font-size: 16px;
     background: #D32F2F;
@@ -2101,13 +2039,13 @@ header {
     .card.small .title h1 {
       margin: 10px 6px; }
   .card.small .body {
-    font-size: 14px; }
+    font-size: 12px; }
   .card.small img {
     width: 100%;
     height: 100%; }
   .card.small .etc {
     top: 0px;
-    min-height: 250px;
+    min-height: 300px;
     background: #FFFFFF; }
     .card.small .etc.up {
       top: -209px; }

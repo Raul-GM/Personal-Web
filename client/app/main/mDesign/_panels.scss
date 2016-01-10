@@ -19,7 +19,7 @@
   		font-size: 20px;
   	}
   	.body{
-  		margin: 0 $mrgHor;
+  		margin: $mrgHor*2 $mrgHor;
   		font-size: 16px;
   		line-height: 120%;
   		p{ margin: $mrgHor 0;}
@@ -33,6 +33,10 @@
   		@include transition(0.25s linear);
   		p>span{
   			cursor: pointer;
+  			font-size: 16px;
+  		}
+  		.body{
+  			margin-top: 0px;
   		}
   	}
   	&.clickable{
