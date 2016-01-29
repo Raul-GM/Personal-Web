@@ -11,6 +11,13 @@
 		-ms-transform: 	rotateY($degrees);
 }
 
+@mixin rotateZ($degrees){
+	-webkit-transform: 	rotateZ($degrees);
+		-moz-transform: rotateZ($degrees);
+		-o-transform: 	rotateZ($degrees);
+		-ms-transform: 	rotateZ($degrees);
+}
+
 @mixin calc($prop, $calc){
 	#{$prop}: 		-webkit-calc(#{$calc});
 	#{$prop}: 		-moz-calc(#{$calc});

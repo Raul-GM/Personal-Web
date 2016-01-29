@@ -16,6 +16,63 @@
       $locationProvider.html5Mode(true);
     });
   /***** NAV **************************************/
+  app.controller('btnController', function($scope, $timeout){
+    this.prepareAnimation = function($event, $index){
+      var ink = $($event.currentTarget.parentElement).find('.ink');
+      ink.addClass('animate');
+      ink.attr("style","width: 140px; height: 140px; left: " + ($event.offsetX - 70) + "px; top: " + ($event.offsetY - 70) + "px");
+      var reset = function(){
+        ink.attr("style","width: 0; height: 0");
+        ink.removeClass('animate');
+      }
+ 
+      $timeout(reset,450);
+    }
+    this.launchAnimation = function($event){
+      this.left = $event.offsetX - 50;
+      this.top = $event.offsetY - 50;
+      this.width = '140';
+      this.height = '140';
+      this.class_name = 'animate';
+    }
+    this.sendForm = function(){
+      console.log('----->');
+      // var nombre = $("#ContactName").val();
+      var nombre = 'yomismo';
+      // var email = $("#ContactEmail").val();
+      var email = 'raulgm83@gmail.com';
+      var validacion_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+      // var mensaje = $("#ContactText").val();
+      var mensaje = 'ola k ase';
+      
+      if (nombre == "") {
+          $("#ContactName").focus();
+          return false;
+      }else if(email == "" || !validacion_email.test(email)){
+          $("#ContactEmail").focus(); 
+          return false;
+      }else if(mensaje == ""){
+          $("#ContactText").focus();
+          return false;
+      }else{
+        var datos = 'nombre='+ nombre + 
+              '&email=' + email + 
+              '&mensaje=' + mensaje;
+        $.ajax({
+            type: "POST",
+            url: "/../../proccess.php",
+            data: datos,
+            success: function() {
+              alert(VAR_Contact_Result_Ok);
+            },
+          error: function() {
+            alert(VAR_Contact_Result_Ko);
+          }
+        });
+        return false; 
+      }
+    }
+  });
   app.controller('navController', function($scope, $timeout){
     this.options = options;
 
@@ -78,9 +135,9 @@ var options = [
   {
     name: "Contacta"
   },
-  {
+  /*{
     name: "Blog?"
-  },
+  },*/
 ];
 
 var portfolio = [

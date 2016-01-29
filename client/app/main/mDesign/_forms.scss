@@ -1,6 +1,33 @@
-.form{ 
-	padding: 20px 0;
-	width: 50%;
+.contactWrapper{
+	max-width: 600px;
+	@include calc(width, "100% - #{$mrgCardHor*2}");
+	padding: $mrgCardHor;
+	@include flexbox;
+	@include flex-direction(row);
+	@include justify-content(center);
+	@include align-items(center);
+	.social{
+		width: 200px;
+		align-self: flex-start;
+		margin-right: $mrgHor*2;
+		p:first-child{ margin: 20px 0; }
+		ul li{
+			margin-bottom: 10px;
+			a{
+				color: $sTextColor;
+				span::before{ transition: all 0.2s linear; }
+				&:hover { 
+					span::before{ color: $pColor; } 
+				}
+			}
+		}
+	}
+	.form{
+		align-self: flex-start;
+		max-width: 300px;
+    	width: 100%;
+		.textarea1{ margin-bottom: 20px; }
+	}
 }
 .text1,
 .textarea1{
@@ -15,6 +42,7 @@
 		border: none;
 		border-radius: 0;
 		outline: none;
+		width: 100%;
 		height: 30px;
 		resize: none;
 	}

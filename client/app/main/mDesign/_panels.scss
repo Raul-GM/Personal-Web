@@ -31,13 +31,29 @@
   		border-top: 1px $sTextColor solid;
   		cursor: default;
   		@include transition(0.25s linear);
-  		p>span{
-  			cursor: pointer;
-  			font-size: 16px;
-  		}
+  		p{
+        text-align: right;
+        margin-right: $mrgHor;
+        &>span{
+          display: inline-block;
+          color: $acolor;
+    			cursor: pointer;
+    			font-size: 22px;
+          @include rotateZ(0deg);
+          @include transition(0.25s linear);
+          &:hover{ color: $pColorDark; }
+    		}
+      }
   		.body{
   			margin-top: 0px;
+        p{ 
+          text-align: center; 
+          margin-right: 0;
+        }
   		}
+      &.up .icon{
+        @include rotateZ(180deg);
+      }
   	}
   	&.clickable{
   		cursor: pointer;

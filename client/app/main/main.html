@@ -1,8 +1,8 @@
 <header id="header">
-  <!-- <div>
+  <div>
     <h1 ><span class="reverseText longShadowInverse">R</span><span class="longShadow">aúlGM</span></h1>
     <h2 ><span class="longShadow">Front-End developer</span></h2>
-  </div> -->
+  </div>
   <nav ng-controller="navController as nav">
     <ul>
       <li ng-repeat="option in nav.options track by $index" ng-mouseup="nav.launchAnimation($event)" ng-click="nav.prepareAnimation($event, $index)">
@@ -36,7 +36,7 @@
           <img src="{{project.image}}">
         </div>
         <div class="etc">
-          <p><span id="cardEtc" ng-click="pf.openEtc($index)">...</span></p>
+          <p><span id="cardEtc" class="icon icon-up_arrow" ng-click="pf.openEtc($index)"></span></p>
           <div class="body">
             <p>{{project.text}}</p>
           </div>
@@ -45,22 +45,35 @@
     </div>
   </article>
   <article id="container2" class="card big hide">
-    <div class="form" >
-      <p>Escríbeme!</p>
-      <div ng-init="focus=false" class="text1" ng-class="{focus: txtNameFocus, active: addClassName.length}" for="txtName">
-        <input ng-focus="txtNameFocus=true;" ng-model="addClassName" ng-blur="txtNameFocus=false" type="text" id="txtName" name="txtName">
-        <label>Nombre *</label>
+    <div class="title">
+      <h1>Contacta conmigo</h1>
+    </div>
+    <div class="contactWrapper">
+      <div class="social">
+        <p>Puedes contactar conmigo a través de las redes sociales o enviándome un correo rellenando el formulario de la derecha.</p>
+        <ul>
+          <li><a ng-href="https://twitter.com/RaulGM_83" target="_blank"><span class="icon icon-twitter"> Twitter</span></a></li>
+          <li><a ng-href="https://es.linkedin.com/in/raúl-garcia-martin-2106897b" target="_blank"><span class="icon icon-linkedin"> Linkedin</span></a></li>
+          <li><a ng-href="https://plus.google.com/u/0/107684812710422055789" target="_blank"><span class="icon icon-google-plus"> Google+</span></a></li>
+        </ul>
       </div>
-      <div ng-init="focus=false" class="text1" ng-class="{focus: txtEmailFocus, active: addClassEmail.length}" for="txtEmail">
-        <input ng-focus="txtEmailFocus=true;" ng-model="addClassEmail" ng-blur="txtEmailFocus=false" type="text" id="txtEmail" name="txtEmail">
-        <label>Correo *</label>
-      </div>
-      <div ng-init="focus=false" class="textarea1" ng-class="{focus: txtTextFocus, active: addClassText.length}" for="txtText">
-        <textarea ng-focus="txtTextFocus=true;" ng-model="addClassText" ng-blur="txtTextFocus=false" type="text" id="txtText" name="txtText"/>
-        <label>Texto *</label>
-      </div>
-      <div ng-controller="btnController">
-        <a class="flatButton" ng-mouseup="btnController.launchAnimation($event)" ng-click="btnController.prepareAnimation($event, $index)" href="">Enviar</a>
+      <div class="form" >
+        <div ng-init="focus=false" class="text1" ng-class="{focus: txtNameFocus, active: addClassName.length}" for="txtName">
+          <input ng-focus="txtNameFocus=true;" ng-model="addClassName" ng-blur="txtNameFocus=false" type="text" id="txtName" name="txtName">
+          <label>Nombre *</label>
+        </div>
+        <div ng-init="focus=false" class="text1" ng-class="{focus: txtEmailFocus, active: addClassEmail.length}" for="txtEmail">
+          <input ng-focus="txtEmailFocus=true;" ng-model="addClassEmail" ng-blur="txtEmailFocus=false" type="text" id="txtEmail" name="txtEmail">
+          <label>Correo *</label>
+        </div>
+        <div ng-init="focus=false" class="textarea1" ng-class="{focus: txtTextFocus, active: addClassText.length}" for="txtText">
+          <textarea ng-focus="txtTextFocus=true;" ng-model="addClassText" ng-blur="txtTextFocus=false" type="text" id="txtText" name="txtText"/>
+          <label>Texto *</label>
+        </div>
+        <div ng-controller="btnController as button" class="buttonWrapper raisedButton">
+          <div ng-class="class_name" class="ink" style="top:{{top}}px; left:{{left}}px; width:{{width}}px; height:{{height}}px"></div>
+          <a class="button" ng-mouseup="button.launchAnimation($event)" ng-click="button.prepareAnimation($event, $index); button.sendForm();" href="">Enviar</a>
+        </div>
       </div>
     </div>
   </article>

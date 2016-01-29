@@ -16,11 +16,32 @@
     100%{opacity: 1; transform: scale(0);}
 }
 
+.buttonWrapper{
+    position: relative;
+    overflow: hidden;
+}
+
 .flatButton{
-    border: none;
-    background: #FF4081;
-    color: #FFFFFF!important;
-    padding: 5px 8px;
-    font-size: 16px;
-    cursor: pointer;
+    .button{
+        @include calc(width, "100% - 16px");
+        height: 20px;
+        line-height: 20px;
+        display: block;
+        text-align: center;
+        border: none;
+        background: $pColor;
+        color: $pColorText;
+        padding: 5px 8px;
+        font-size: 16px;
+        cursor: pointer;    
+    }
+}
+
+.raisedButton{
+    @extend .flatButton;
+    box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+    transition: all 0.2s ease-in-out;
+    &:hover{
+        box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    }
 }
