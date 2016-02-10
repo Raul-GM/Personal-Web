@@ -34,45 +34,49 @@
       this.width = '140';
       this.height = '140';
       this.class_name = 'animate';
-    }
+    }  
+  });
+
+  app.controller('frmController', function($scope, $http){
     this.sendForm = function(){
-      console.log('----->');
-      // var nombre = $("#ContactName").val();
-      var nombre = 'yomismo';
-      // var email = $("#ContactEmail").val();
-      var email = 'raulgm83@gmail.com';
+      var nombre = $scope.addClassName || '';
+      var email = $scope.addClassEmail || '';
       var validacion_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-      // var mensaje = $("#ContactText").val();
-      var mensaje = 'ola k ase';
+      var mensaje = $scope.addClassText || '';
+      $scope.mensajeError = '';
       
-      if (nombre == "") {
-          $("#ContactName").focus();
+      if (nombre === '') {
+          $scope.mensajeError = 'El nombre es obligatorio';
           return false;
-      }else if(email == "" || !validacion_email.test(email)){
-          $("#ContactEmail").focus(); 
-          return false;
-      }else if(mensaje == ""){
-          $("#ContactText").focus();
-          return false;
-      }else{
-        var datos = 'nombre='+ nombre + 
-              '&email=' + email + 
-              '&mensaje=' + mensaje;
-        $.ajax({
-            type: "POST",
-            url: "/../../proccess.php",
-            data: datos,
-            success: function() {
-              alert(VAR_Contact_Result_Ok);
-            },
-          error: function() {
-            alert(VAR_Contact_Result_Ko);
-          }
-        });
-        return false; 
       }
+      if(email === '' || !validacion_email.test(email)){
+          $scope.mensajeError = 'Existe un error en el mail';
+          return false;
+      }
+      if(mensaje === ''){
+        $scope.mensajeError = 'Te falta el mensaje por rellenar';
+        return false;
+      }
+
+      var request = $http({
+        method: "post",
+        url: window.location.href + 'app/proccess.php',
+        data: {
+          nombre: nombre,
+          email: email,
+          mensaje: mensaje
+        },
+        headers:  { 'Content-Type': 'application/x-www-form-urlencoded' }
+      });
+
+      request.success(function(data){
+        console.log("OK");
+      });
+      return false; 
+      
     }
   });
+
   app.controller('navController', function($scope, $timeout){
     this.options = options;
 

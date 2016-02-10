@@ -132,10 +132,11 @@ header{
 			height: 100%;
 		}
 		.etc{
-			top: 0px;
+			// top: 0px;
+			bottom: -165px;
 			min-height: $crdSmallHeight;
 			background: $pColorText;
-			&.up{ top: -209px; }
+			&.up{ bottom: 48px; }
 		}
 	}
 }

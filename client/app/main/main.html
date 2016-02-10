@@ -57,7 +57,7 @@
           <li><a ng-href="https://plus.google.com/u/0/107684812710422055789" target="_blank"><span class="icon icon-google-plus"> Google+</span></a></li>
         </ul>
       </div>
-      <div class="form" >
+      <div class="form" ng-controller="frmController as form">
         <div ng-init="focus=false" class="text1" ng-class="{focus: txtNameFocus, active: addClassName.length}" for="txtName">
           <input ng-focus="txtNameFocus=true;" ng-model="addClassName" ng-blur="txtNameFocus=false" type="text" id="txtName" name="txtName">
           <label>Nombre *</label>
@@ -72,8 +72,9 @@
         </div>
         <div ng-controller="btnController as button" class="buttonWrapper raisedButton">
           <div ng-class="class_name" class="ink" style="top:{{top}}px; left:{{left}}px; width:{{width}}px; height:{{height}}px"></div>
-          <a class="button" ng-mouseup="button.launchAnimation($event)" ng-click="button.prepareAnimation($event, $index); button.sendForm();" href="">Enviar</a>
+          <a class="button" ng-mouseup="button.launchAnimation($event)" ng-click="button.prepareAnimation($event, $index); form.sendForm();" href="">Enviar</a>
         </div>
+        <p>{{mensajeError}}</p>
       </div>
     </div>
   </article>
