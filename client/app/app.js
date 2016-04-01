@@ -43,18 +43,19 @@
       var email = $scope.addClassEmail || '';
       var validacion_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
       var mensaje = $scope.addClassText || '';
-      $scope.mensajeError = '';
-      
+      $scope.nameRequired = '';
+      $scope.emailRequired = '';
+      $scope.textRequired = '';
       if (nombre === '') {
-          $scope.mensajeError = 'El nombre es obligatorio';
+          $scope.nameRequired = '* El nombre es obligatorio';
           return false;
       }
       if(email === '' || !validacion_email.test(email)){
-          $scope.mensajeError = 'Existe un error en el mail';
+          $scope.emailRequired = '* El correo debe ser correcto';
           return false;
       }
       if(mensaje === ''){
-        $scope.mensajeError = 'Te falta el mensaje por rellenar';
+        $scope.textRequired = '* El mensaje es obligatorio';
         return false;
       }
 
@@ -124,6 +125,10 @@
       });
     });*/
 
+  });
+  app.controller('footerCtrl', function($scope){
+    var thisYear = new Date();
+    $scope.footerText = 'Copyright © RaúlGM' + thisYear.getFullYear();
   });
 })();
 

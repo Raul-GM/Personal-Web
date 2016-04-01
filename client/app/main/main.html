@@ -19,8 +19,8 @@
       <h1>¿Quién soy?</h1>
     </div>
     <div class="body">
-      <p><strong>Hello world!</strong> Soy un programador especializado en el desarrollo y maquetación web con más de 10 años como profesional (aunque llevo desde los 14 años cacharreando con mis proyectos personales). A parte del mundo web, tengo experiencia como desarrollador de aplicaciones Android.</p>
-      <p>Inquieto, proactivo, amante de la música, repostero en mis tiempos libres, UX ninja y padre un tanto freak.</p>
+      <p><strong>Salu2!!</strong> Soy un programador especializado en el desarrollo y maquetación web con más de 10 años como profesional (aunque llevo desde los 14 años cacharreando con mis proyectos personales). A parte del mundo web, tengo experiencia como desarrollador de aplicaciones Android.</p>
+      <p>Devorador de blogs, inquieto, proactivo, amante de la música y el cine, repostero en mis tiempos libres, UX ninja y fan incondicional de mi hija.</p>
     </div>
   </article>
   <article id="container1" class="card big hide" ng-controller="pfController as pf">
@@ -61,14 +61,17 @@
         <div ng-init="focus=false" class="text1" ng-class="{focus: txtNameFocus, active: addClassName.length}" for="txtName">
           <input ng-focus="txtNameFocus=true;" ng-model="addClassName" ng-blur="txtNameFocus=false" type="text" id="txtName" name="txtName">
           <label>Nombre *</label>
+          <p>{{nameRequired}}</p>
         </div>
         <div ng-init="focus=false" class="text1" ng-class="{focus: txtEmailFocus, active: addClassEmail.length}" for="txtEmail">
           <input ng-focus="txtEmailFocus=true;" ng-model="addClassEmail" ng-blur="txtEmailFocus=false" type="text" id="txtEmail" name="txtEmail">
           <label>Correo *</label>
+          <p>{{emailRequired}}</p>
         </div>
         <div ng-init="focus=false" class="textarea1" ng-class="{focus: txtTextFocus, active: addClassText.length}" for="txtText">
           <textarea ng-focus="txtTextFocus=true;" ng-model="addClassText" ng-blur="txtTextFocus=false" type="text" id="txtText" name="txtText"/>
           <label>Texto *</label>
+          <p>{{textRequired}}</p>
         </div>
         <div ng-controller="btnController as button" class="buttonWrapper raisedButton">
           <div ng-class="class_name" class="ink" style="top:{{top}}px; left:{{left}}px; width:{{width}}px; height:{{height}}px"></div>
@@ -79,8 +82,8 @@
     </div>
   </article>
 </section>
-<footer>
-  
+<footer class="footer" ng-controller="footerCtrl">
+  <p>{{footerText}}</p>
 </footer>
 <!-- <div ng-include="'components/navbar/navbar.html'"></div>
 
@@ -103,11 +106,5 @@
   </div>
 </div>
 
-<footer class="footer">
-  <div class="container">
-      <p>Angular Fullstack v2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
-</footer>
+
  -->

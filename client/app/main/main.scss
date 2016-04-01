@@ -6,19 +6,28 @@ body > .ng-scope:first-child{
 	overflow: hidden;
 	font-family: $fntMain;
 }
+div.ng-scope{
+	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
+}
 
 a{ text-decoration: none; }
-
+strong{ font-weight: bold; }
 section{
 	background-image: url("../assets/images/background.jpg");
-	background-size: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position-x: 50%;
     background-color: $acolor;
-    @include calc(height, 100% - #{$szHeader});
+    width: 100%;
+    @include calc(height, 100% - #{$szHeader} - #{$footerHeight});
     overflow: auto;
     position: relative;
 }
 header{
-
+	width: 100%;
 	background-color: $pColor;
 	height: $szHeader;
 	position: relative;
@@ -33,7 +42,7 @@ header{
 		@include flexbox;
 		@include flex-direction(column);
 		@include justify-content(center);
-		@include flex(0 0 150px);
+		@include flex(0 0 110px);
 		font-family: fntTitle;
 		h1{
 			text-align: center;
@@ -100,7 +109,7 @@ header{
 		opacity: 1;
 		background: $pColorText;
 		&.hide{
-			top: -300px;
+			top: -1000px;
 			opacity: 0;
 			visibility: hidden;
 		}
@@ -142,3 +151,74 @@ header{
 }
 
 #container0.card.big .body{ margin: $mrgVer*2 $mrgHor*4; }
+
+.footer{
+	width: 100%;
+	position: relative;
+	height: $footerHeight;
+	line-height: $footerHeight;
+	color: $pColorText;
+	background: $pTextColor;
+	font-size: 10px;
+	padding-left: $mrgCardVer;
+	text-align: left;
+}
+
+@media (max-width:700px){
+	header{
+		height: $szHeader-min;
+		div{
+			@include flex(0 0 85px);
+		}
+		nav{
+			@include flex(0 1 $szNav-min);
+			ul, ul li{
+				height: $szNav-min;
+			}
+			ul li{
+				line-height: $szNav-min;
+				font-size: 14px;
+				padding: 0 20px;
+			}
+		}
+	}
+	section{
+		@include calc(height, 100% - #{$szHeader-min} - #{$footerHeight});
+	}
+	.card {
+		&.big{
+			@include calc(width, "100% - #{$mrgCardHor-min*2}");
+			margin: 0 0 $mrgCardVer $mrgCardHor-min;
+			top: $mrgCardVer-min;
+			.title{ font-size: 18px; }
+			.body{ font-size: 14px; }
+		}
+		&.small{
+			.title{ font-size: 14px; }
+			.body{ font-size: 12px; }
+		}
+	}
+	#container0.card.big .body{ 
+		margin: 24px 34px;
+		text-align: justify;
+	}
+	.contactWrapper{
+		@include calc(width, "100% - #{$mrgCardHor-min*2}");
+		padding: $mrgCardHor-min;
+		@include flex-direction(column);
+		.social{
+			width: 100%;
+			@include align-self(center);
+			margin-right: 0;
+			font-size: 14px;
+			text-align: justify;
+			ul{
+				text-align: center;
+				line-height: 140%;
+			}
+		}
+		.text1, .textarea1{
+			@include calc(width, "100% - #{$mrgCardHor-min*2}");
+		}
+	}
+}

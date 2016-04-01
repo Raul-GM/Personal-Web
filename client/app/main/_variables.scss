@@ -1,23 +1,52 @@
+// // COLORS
+// $pColorDark:        $rd700;
+// $pColor:            $rd500;
+// $pColorAlpha1:		rgba(244, 67, 54, 0.5);
+// $pColorAlpha2:		rgba(211, 47, 47, 0.5);
+// $pColorLight:       $rd100;
+// $pColorText:        $white;
+// $acolor:            $bg500;
+// $pTextColor:        $gy900;
+// $sTextColor:        $gy600;
+// $dColor:            $gy400;
+
+// // COLORS V2
+// $pColorDark:        #6c648b;
+// $pColor:            #b6a19e;
+// $pColorAlpha1:		rgba(251, 161, 0, 0.5);
+// $pColorAlpha2:		rgba(211, 47, 47, 0.5);
+// $pColorLight:       #6bbaa7;
+// $pColorText:        $white;
+// $acolor:            #FBA100;
+// $pTextColor:        $gy900;
+// $sTextColor:        $gy600;
+// $dColor:            $gy400;
+
 // COLORS
-$pColorDark:        $rd700;
-$pColor:            $rd500;
-$pColorAlpha1:		rgba(244, 67, 54, 0.5);
-$pColorAlpha2:		rgba(211, 47, 47, 0.5);
-$pColorLight:       $rd100;
+$pColorDark:        #565656;
+$pColor:            #D7CEC7;
+$pColorAlpha1:		rgba(216, 27, 96, 0.3);
+$pColorAlpha2:		rgba(86, 86, 86	, 0.1);
+$pColorLight:       #C09F80;
 $pColorText:        $white;
-$acolor:            $bg500;
+$acolor:            #d81b60;
 $pTextColor:        $gy900;
 $sTextColor:        $gy600;
 $dColor:            $gy400;
 
 //SIZES
-$szHeader:			200px;
+$szHeader:			160px;
+$szHeader-min:		120px;
 $szNav:				50px;
+$szNav-min:			35px;
 $mrgHor:			12px;
 $mrgVer:			20px;
 $mrgCardHor:		50px;
+$mrgCardHor-min:	25px;
 $mrgCardVer:		70px;
+$mrgCardVer-min:	35px;
 $crdSmallHeight:	300px;
+$footerHeight:		40px;
 
 //FONTS
 $fntMain:			'Roboto', sans-serif;
